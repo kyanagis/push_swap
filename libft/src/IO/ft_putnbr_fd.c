@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/24 17:59:38 by kyanagis         ###   ########.fr       */
+/*   Created: 2025/05/13 12:47:17 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/05/13 12:47:21 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
-void	error_exit(void)
+void	ft_putnbr_fd(int n, int fd)
 {
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
+	char	c;
+	long	num;
 
-int	main(int ac, char **av)
-{
-	int len = ac - 1;
-	int *stack = malloc(sizeof(int) * len);
-	if (!stack)
-		error_exit();
+	num = (long)n;
+	if (num < 0)
+	{
+		write(fd, "-", 1);
+		num = -num;
+	}
+	if (num >= 10)
+		ft_putnbr_fd(num / 10, fd);
+	c = (num % 10) + '0';
+	write(fd, &c, 1);
 }

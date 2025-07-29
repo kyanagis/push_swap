@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/24 17:59:38 by kyanagis         ###   ########.fr       */
+/*   Created: 2025/07/13 05:58:06 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/07/24 17:59:15 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-void	error_exit(void)
-{
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
-
-int	main(int ac, char **av)
-{
-	int len = ac - 1;
-	int *stack = malloc(sizeof(int) * len);
-	if (!stack)
-		error_exit();
-}
+# include "stack.h"
+# include <limits.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+#endif

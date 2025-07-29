@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/24 17:59:38 by kyanagis         ###   ########.fr       */
+/*   Created: 2025/05/08 08:53:46 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/05/15 17:48:48 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
-void	error_exit(void)
+void	ft_bzero(void *s, size_t n)
 {
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
-
-int	main(int ac, char **av)
-{
-	int len = ac - 1;
-	int *stack = malloc(sizeof(int) * len);
-	if (!stack)
-		error_exit();
+	ft_memset(s, 0, n);
 }

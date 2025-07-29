@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/24 17:59:38 by kyanagis         ###   ########.fr       */
+/*   Created: 2025/05/08 04:34:28 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/05/16 19:50:55 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
-void	error_exit(void)
+size_t	ft_strlen(const char *s)
 {
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(EXIT_FAILURE);
+	const char	*start = s;
+
+	while (*s)
+		++s;
+	return ((size_t)(s - start));
 }
 
-int	main(int ac, char **av)
-{
-	int len = ac - 1;
-	int *stack = malloc(sizeof(int) * len);
-	if (!stack)
-		error_exit();
-}
+// int	main(void)
+// {
+// 	char *s = NULL;
+// 	printf("%zu\n", ft_strlen(s));
+// }

@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/24 17:59:38 by kyanagis         ###   ########.fr       */
+/*   Created: 2025/05/20 03:43:52 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/05/21 15:24:59 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
-void	error_exit(void)
+void	ft_putchar_res(char c, int *result)
 {
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(EXIT_FAILURE);
+	*result += write(1, &c, 1);
 }
 
-int	main(int ac, char **av)
+void	ft_putstr_res(char *s, int *result)
 {
-	int len = ac - 1;
-	int *stack = malloc(sizeof(int) * len);
-	if (!stack)
-		error_exit();
+	if (!s)
+	{
+		*result += write(1, "(null)", 6);
+		return ;
+	}
+	while (*s)
+		*result += write(1, s++, 1);
 }

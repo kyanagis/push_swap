@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/24 17:59:38 by kyanagis         ###   ########.fr       */
+/*   Created: 2025/07/13 06:00:15 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/07/13 06:02:11 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
-void	error_exit(void)
+long	ft_atol(const char *s)
 {
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
+	long	sign;
+	long	res;
 
-int	main(int ac, char **av)
-{
-	int len = ac - 1;
-	int *stack = malloc(sizeof(int) * len);
-	if (!stack)
-		error_exit();
+	sign = 1;
+	res = 0;
+	while (*s >= 9 && *s <= 13)
+		++s;
+	if (*s == '+' || *s == '-')
+	{
+		if (*s == '-')
+			sign = -1;
+		++s;
+	}
+	if (*s == '\0')
+		exit_error();
+	while (*s)
+	{
+		if (*s < '0' || *s > '9')
+			exit_error();
+		res = res * 10 + (*s - '0');
+		s++;
+	}
+	return (res * sign);
 }
