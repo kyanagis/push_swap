@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: kyanagis <kyanagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 04:34:55 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/30 02:39:20 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/07/30 16:56:52 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+
+int					ft_isspace(int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *s);

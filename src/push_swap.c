@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: kyanagis <kyanagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/30 02:39:09 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/07/30 17:12:54 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,46 @@ int	is_valid_number(char *s)
 	return (1);
 }
 
-int	main(int argc, char **argv)
+// パーステスト用
+int	main(int ac, char **av)
 {
-	t_node	*stack_a;
-	t_node	*current;
-	t_node	*next;
+	t_node	*stk;
+	t_node	*n;
 
-	stack_a = NULL;
-	if (argc < 2)
-		return (0);
-	parse_arguments(argc, argv, &stack_a);
-	// sort algo　追加予
-	current = stack_a;
-	while (current)
+	stk = NULL;
+	if (ac < 2)
+		return (printf("usage: %s <nums>\n", av[0]), 0);
+	parse_arguments(ac, av, &stk);
+	for (t_node *c = stk; c; c = c->next)
+		printf("%d ", c->value);
+	puts("");
+	while (stk)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		n = stk->next;
+		free(stk);
+		stk = n;
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }
+
+// こっちを使う
+// int	main(int argc, char **argv)
+// {
+// 	t_node	*stack_a;
+// 	t_node	*current;
+// 	t_node	*next;
+
+// 	stack_a = NULL;
+// 	if (argc < 2)
+// 		return (0);
+// 	parse_arguments(argc, argv, &stack_a);
+// 	// sort algo　追加予
+// 	current = stack_a;
+// 	while (current)
+// 	{
+// 		next = current->next;
+// 		free(current);
+// 		current = next;
+// 	}
+// 	return (EXIT_SUCCESS);
+// }

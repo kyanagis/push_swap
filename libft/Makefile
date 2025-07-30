@@ -30,7 +30,8 @@ SRC_CHAR := \
 	src/char/ft_isalpha.c \
 	src/char/ft_isascii.c \
 	src/char/ft_isdigit.c \
-	src/char/ft_isprint.c
+	src/char/ft_isprint.c \
+	src/char/ft_isspace.c
 
 
 SRC_CONVERT := \
