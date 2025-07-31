@@ -2,5 +2,8 @@
 
 int	ft_isspace(int c)
 {
-	return (c == ' ' && (c >= 9 && c <= 13));
+	unsigned char ch;
+
+	ch = (unsigned char)c;
+	return (ch == ' ' || (ch >= 9 && ch <= 13));
 }

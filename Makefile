@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: kyanagis <kyanagis@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/30 02:20:06 by kyanagis          #+#    #+#              #
-#    Updated: 2025/07/30 02:20:48 by kyanagis         ###   ########.fr        #
+#    Updated: 2025/07/31 14:27:17 by kyanagis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LIBFT_A     := $(LIBFT_DIR)/libft.a
 
 
 
-SRC_FILES   := push_swap.c parse.c node_utils.c
+SRC_FILES   := push_swap.c parse.c node_utils.c ft_split_ws.c
 SRC         := $(addprefix $(SRC_DIR)/,$(SRC_FILES))
 OBJ         := $(addprefix $(OBJ_DIR)/,$(SRC_FILES:.c=.o))
 
