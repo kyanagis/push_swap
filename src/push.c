@@ -10,9 +10,11 @@ void	pa(t_node **a, t_node **b)
 	*b = tmp->next;
 	tmp->next = *a;
 	*a = tmp;
+	write(STDOUT_FILENO, "pa\n", 3);
 }
 
 void	pb(t_node **a, t_node **b)
 {
 	pa(b, a);
+	write(STDOUT_FILENO, "pb\n", 3);
 }
