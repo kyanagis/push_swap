@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   node_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyanagis <kyanagis@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 02:13:05 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/30 16:57:56 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/03 23:43:21 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ t_node	*create_new_node(int value)
 
 void	append_node(t_node **stack, int num)
 {
-	t_node *new_node;
-	t_node *last;
+	t_node	*new_node;
+	t_node	*last;
 
 	new_node = create_new_node(num);
 	if (!*stack)

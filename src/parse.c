@@ -32,7 +32,6 @@ static int	has_dup(t_node *head)
 	}
 	return (0);
 }
-
 void	parse_arguments(int ac, char **av, t_node **a)
 {
 	int		i;
@@ -44,10 +43,16 @@ void	parse_arguments(int ac, char **av, t_node **a)
 	{
 		tok = ft_split_ws(av[i]);
 		if (!tok || !tok[0])
-			return (free_split(tok), error_exit(), (void)0);
+		{
+			free_split(tok);
+			error_exit();
+		}
 		k = 0;
 		while (tok[k])
-			append_from_str(tok[k++], a);
+		{
+			append_from_str(tok[k], a);
+			++k;
+		}
 		free_split(tok);
 		++i;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyanagis <kyanagis@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 05:58:06 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/31 14:36:40 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/04 01:56:48 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include "ps_msg.h"
 # include "stack.h"
 # include <limits.h>
 # include <stdio.h>
@@ -29,4 +30,6 @@ int		is_valid_number(char *s);
 void	parse_arguments(int argc, char **argv, t_node **stack_a);
 // ft_split_ws.c
 char	**ft_split_ws(const char *s);
+
+t_node	*lstlast(t_node *lst);
 #endif

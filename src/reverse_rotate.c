@@ -17,18 +17,18 @@ void	rra(t_node **a)
 	prev->next = NULL;
 	last->next = *a;
 	*a = last;
-	write(STDOUT_FILENO, "rra\n", 4);
+	ft_putendl_fd(MSG_RRA, STDOUT_FILENO);
 }
 
 void	rrb(t_node **b)
 {
 	rra(b);
-	write(STDOUT_FILENO, "rrb\n", 4);
+	ft_putendl_fd(MSG_RRB, STDOUT_FILENO);
 }
 
 void	rrr(t_node **a, t_node **b)
 {
 	rra(a);
 	rra(b);
-	write(STDOUT_FILENO, "rrr\n", 4);
+	ft_putendl_fd(MSG_RRR, STDOUT_FILENO);
 }
