@@ -5,60 +5,57 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/07/30 02:20:06 by kyanagis          #+#    #+#              #
-#    Updated: 2025/08/04 01:42:11 by kyanagis         ###   ########.fr        #
+#    Created: 2025/08/04 08:55:09 by kyanagis          #+#    #+#              #
+#    Updated: 2025/08/04 08:55:24 by kyanagis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        := push_swap
+
+NAME    := push_swap
+
+CC      := cc
+CFLAGS  := -Wall -Wextra -Werror -Iinclude -Ilibft/include
+LDFLAGS := -Llibft -lft        
 
 
-SRC_DIR     := src
-OBJ_DIR     := obj
-INC_DIR     := include
-LIBFT_DIR   := libft
-LIBFT_A     := $(LIBFT_DIR)/libft.a
-
-
-
-SRC_FILES   := push_swap.c parse.c node_utils.c ft_split_ws.c swap.c push.c rotate.c reverse_rotate.c
-SRC         := $(addprefix $(SRC_DIR)/,$(SRC_FILES))
-OBJ         := $(addprefix $(OBJ_DIR)/,$(SRC_FILES:.c=.o))
-
-
-CC          := cc
-CFLAGS      := -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_DIR)/include
-LDFLAGS     := -L$(LIBFT_DIR) -lft
-
-
-
+SRCS := \
+src/push_swap.c \
+src/parse.c \
+src/ft_split_ws.c \
+src/utils/node_utils.c \
+src/utils/free_utils.c\
+src/order/swap.c \
+src/order/push.c \
+src/order/rotate.c \
+src/order/reverse_rotate.c \
+src/sort_five_ida/ida_dfs.c \
+src/sort_five_ida/ida_ops.c \
+src/sort_five_ida/ida_utils.c \
+src/sort_five_ida/ida_star.c \
+src/sort_five_ida/sort_five.c \
+src/LIS.c
+OBJS := $(SRCS:src/%.c=obj/%.o)
 
 all: $(NAME)
 
+$(NAME): $(OBJS) libft/libft.a
+	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $@
 
-$(NAME): $(LIBFT_A) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(LDFLAGS) -o $@
-
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+obj/%.o: src/%.c
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
-
-$(LIBFT_A):
-	$(MAKE) -C $(LIBFT_DIR)
+libft/libft.a:
+	$(MAKE) -C libft
 
 
 clean:
-	rm -rf $(OBJ_DIR)
-	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) -C libft clean
+	rm -rf obj
 
 fclean: clean
+	$(MAKE) -C libft fclean
 	rm -f $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 

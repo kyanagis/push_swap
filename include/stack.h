@@ -6,13 +6,13 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 22:52:55 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 02:00:19 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/04 08:52:42 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
-
+# include <unistd.h>
 typedef struct s_node
 {
 	int				value;
@@ -26,6 +26,14 @@ typedef struct s_stack
 	t_node *tail; // 末尾
 	size_t size;  // 要素数
 }					t_stack;
+
+typedef struct s_lisbuf
+{
+	int				*tails;
+	int				*tidx;
+	int				*prev;
+	int				len;
+}					t_lisbuf;
 
 void				sa(t_node **a);
 void				sb(t_node **b);

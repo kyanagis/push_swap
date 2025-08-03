@@ -1,5 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/04 02:11:10 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/08/04 02:39:01 by kyanagis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	is_valid_number(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (s[0] == '+' || s[0] == '-')
+		i = 1;
+	while (s[i])
+	{
+		if (!ft_isdigit(s[i]))
+			return (0);
+		++i;
+	}
+	if (i == 0 || (i == 1 && (s[0] == '+' || s[0] == '-')))
+		return (0);
+	return (1);
+}
 
 static void	append_from_str(char *s, t_node **a)
 {

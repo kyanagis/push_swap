@@ -6,12 +6,18 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 02:13:05 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/03 23:43:21 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/04 02:42:23 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+t_node	*lstlast(t_node *lst)
+{
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
+}
 t_node	*create_new_node(int value)
 {
 	t_node	*new_node;
@@ -23,6 +29,18 @@ t_node	*create_new_node(int value)
 	new_node->prev = NULL;
 	new_node->next = NULL;
 	return (new_node);
+}
+int	list_size(t_node *lst)
+{
+	int	count;
+
+	count = 0;
+	while (lst)
+	{
+		++count;
+		lst = lst->next;
+	}
+	return (count);
 }
 
 void	append_node(t_node **stack, int num)
