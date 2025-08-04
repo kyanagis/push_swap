@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 05:35:29 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/04 09:30:52 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	sort_manager(t_node **stack_a, t_node **stack_b)
 {
 	size_t	size;
 
-	(void)stack_b;
 	if (is_sorted(*stack_a))
 		return ;
 	size = list_size(*stack_a);
