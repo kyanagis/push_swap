@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 05:58:06 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 08:53:00 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/09 02:47:00 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,7 @@ void	append_node(t_node **stack, int num);
 
 // free_utils.c
 void	free_all(t_node **a, t_node **b);
+
+// sort_medium
+void	sort_medium(t_node **stack_a, t_node **stack_b)
 #endif
