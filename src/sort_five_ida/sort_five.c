@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 05:47:27 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 08:13:19 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/08 23:29:01 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static void	issue(int op, t_node **a, t_node **b)
 		error_exit();
 }
 
-// list -> t_state変換
 static t_state	make_state(t_node *a)
 {
 	t_state	s;
@@ -45,7 +44,7 @@ static t_state	make_state(t_node *a)
 	return (s);
 }
 
-//求めたものの実行
+// 実行
 static void	apply_path(t_node **a, t_node **b, const int *path, int depth)
 {
 	while (depth--)

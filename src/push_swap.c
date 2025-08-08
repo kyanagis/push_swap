@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 09:30:52 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/09 01:46:38 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int	is_sorted(const t_node *stack)
+static int	is_sorted(const t_node *stack)
 {
 	const t_node	*cur = stack;
 
@@ -28,7 +28,7 @@ int	is_sorted(const t_node *stack)
 	return (1);
 }
 
-void	sort_three(t_node **a)
+static void	sort_three(t_node **a)
 {
 	int	f;
 	int	s;
@@ -57,7 +57,7 @@ void	sort_three(t_node **a)
 		rra(a);
 }
 
-void	sort_manager(t_node **stack_a, t_node **stack_b)
+static void	sort_manager(t_node **stack_a, t_node **stack_b)
 {
 	size_t	size;
 
@@ -66,10 +66,10 @@ void	sort_manager(t_node **stack_a, t_node **stack_b)
 	size = list_size(*stack_a);
 	if (size <= 3)
 		sort_three(stack_a);
-	else if (size <= 5)
+	else if (size <= 6)
 		sort_five(stack_a, stack_b);
-	// else if (size <= 100)
-	// 	sort_medium(stack_a, stack_b);
+	else if (size <= 100)
+		sort_medium(stack_a, stack_b);
 	// else
 	// 	sort_large(stack_a, stack_b);
 }

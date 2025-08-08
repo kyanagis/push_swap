@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 06:01:03 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 08:12:46 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/04 18:53:27 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ida_star(const t_state *start, int *out)
 	int		d;
 
 	root = *start;
-	bound = lis_heuristic(&root);
+	bound = inv_heuristic(&root);
 	while (bound <= 12)
 	{
 		next = ida_search(&root, bound, out);

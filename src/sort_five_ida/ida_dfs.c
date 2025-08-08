@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 06:07:03 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 08:12:11 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/04 18:53:14 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	dfs(t_state *now, int g, int bound, int *path)
 	int	op;
 	int	t;
 
-	f = g + lis_heuristic(now);
+	f = g + inv_heuristic(now);
 	if (f > bound)
 		return (f);
 	if (is_goal(now))
