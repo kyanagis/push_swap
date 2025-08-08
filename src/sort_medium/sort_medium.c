@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 20:52:23 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/09 03:30:00 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/09 04:52:27 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,33 @@ static void	push_non_lis_to_b(t_node **stack_a, t_node **stack_b,
 			++pb_count;
 		}
 		++i;
+	}
+}
+
+void	rotate_min_to_top(t_node **stack_a)
+{
+	int	n;
+	int	idx;
+	int	rot;
+
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
+		return ;
+	n = list_size(*stack_a);
+	if (n <= 1)
+		return ;
+	idx = index_of_min(*stack_a);
+	if (idx == 0)
+		return ;
+	rot = (idx <= n / 2) ? idx : idx - n;
+	while (rot > 0)
+	{
+		ra(stack_a);
+		--rot;
+	}
+	while (rot < 0)
+	{
+		rra(stack_a);
+		++rot;
 	}
 }
 
