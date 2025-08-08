@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/09 04:53:44 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/09 05:24:46 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	sort_manager(t_node **stack_a, t_node **stack_b)
 		sort_three(stack_a);
 	else if (size <= 6)
 		sort_five(stack_a, stack_b);
-	else if (size <= 100)
+	else
 		sort_medium(stack_a, stack_b);
 	// else
 	// 	sort_large(stack_a, stack_b);
