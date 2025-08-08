@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 06:07:03 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 18:53:14 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/09 03:44:39 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static int	explore(t_state *now, int g, int bound, int *path, int op)
 	t_state	next;
 	int		t;
 
-	//  往復・無効手を弾く
 	if ((g && inverse_op(op) == path[g - 1]) || (op == OP_PA && !now->len_b)
 		|| (op == OP_PB && !now->len_a))
 		return (INT_MAX);
