@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 05:58:06 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/09 05:25:58 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/10 05:05:15 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
 void	error_exit(void);
 
-// int		mark_lis(const int *arr, int n, char *keep);
+int		mark_lis(const int *arr, int n, char *keep);
 // parse
 void	parse_arguments(int argc, char **argv, t_node **stack_a);
 // ft_split_ws.c
@@ -43,4 +42,5 @@ void	sort_medium(t_node **stack_a, t_node **stack_b);
 // void	push_back_to_a(t_node **stack_a, t_node **stack_b);
 
 // int		index_of_min(t_node *a);
+void	sort_large(t_node **stack_a, t_node **stack_b);
 #endif

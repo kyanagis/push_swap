@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "push_swap.h": "c",
-        "random": "c"
+        "random": "c",
+        "pushswap.h": "c"
     }
 }

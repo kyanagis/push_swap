@@ -6,7 +6,7 @@
 #    By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/04 08:55:09 by kyanagis          #+#    #+#              #
-#    Updated: 2025/08/09 05:25:43 by kyanagis         ###   ########.fr        #
+#    Updated: 2025/08/10 05:07:14 by kyanagis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,16 @@ src/sort_five_ida/ida_ops.c \
 src/sort_five_ida/ida_utils.c \
 src/sort_five_ida/ida_star.c \
 src/sort_five_ida/sort_five.c \
-src/sort_medium/test.c \
-# src/LIS.c \
+src/LIS.c \
+src/sort_large/compute_best_from_b.c \
+src/sort_large/insert_cost.c \
+src/sort_large/large_core_utils.c \
+src/sort_large/lis_seed.c \
+src/sort_large/sort_large.c \
+src/sort_large/coord_compress.c \
+src/sort_large/insert_utils.c \
+src/sort_large/large_rotate.c \
+src/sort_large/push_nonlis.c \
 # src/sort_medium/sort_medium.c
 OBJS := $(SRCS:src/%.c=obj/%.o)
 
