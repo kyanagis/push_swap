@@ -6,7 +6,7 @@
 #    By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/04 08:55:09 by kyanagis          #+#    #+#              #
-#    Updated: 2025/08/10 05:07:14 by kyanagis         ###   ########.fr        #
+#    Updated: 2025/08/10 05:13:19 by kyanagis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LDFLAGS := -Llibft -lft
 SRCS := \
 src/push_swap.c \
 src/parse.c \
-src/ft_split_ws.c \
+src/utils/ft_split_ws.c \
 src/utils/node_utils.c \
 src/utils/free_utils.c\
 src/order/swap.c \

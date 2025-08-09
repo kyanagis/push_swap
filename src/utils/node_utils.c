@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 02:13:05 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 02:42:23 by kyanagis         ###   ########.fr       */
+/*   Created: 2025/08/10 05:49:38 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/08/10 05:50:03 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_node	*lstlast(t_node *lst)
 		lst = lst->next;
 	return (lst);
 }
+
 t_node	*create_new_node(int value)
 {
 	t_node	*new_node;
@@ -30,6 +31,7 @@ t_node	*create_new_node(int value)
 	new_node->next = NULL;
 	return (new_node);
 }
+
 int	list_size(t_node *lst)
 {
 	int	count;

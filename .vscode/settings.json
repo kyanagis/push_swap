@@ -2,6 +2,12 @@
     "files.associations": {
         "push_swap.h": "c",
         "random": "c",
-        "pushswap.h": "c"
+        "pushswap.h": "c",
+        "ida_star.h": "c",
+        "libft.h": "c",
+        "ps.h": "c",
+        "stdio.h": "c",
+        "limits.h": "c",
+        "stack.h": "c"
     }
 }

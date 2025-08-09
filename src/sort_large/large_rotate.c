@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   large_rotate.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/10 05:18:40 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/08/10 05:18:51 by kyanagis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_large.h"
 
 void	rotate_a_by(t_node **a, int rot)
@@ -70,9 +82,9 @@ void	rotate_min_to_top(t_node **a)
 
 void	sort_three(t_node **a)
 {
-	int x;
-	int y;
-	int z;
+	int	x;
+	int	y;
+	int	z;
 
 	if (!*a || !(*a)->next || !(*a)->next->next)
 		return ;

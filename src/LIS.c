@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   LIS.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/10 05:51:14 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/08/10 05:55:19 by kyanagis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	binary_search(int *arr, int len, int key)
@@ -17,18 +29,6 @@ static int	binary_search(int *arr, int len, int key)
 			high = mid;
 	}
 	return (low);
-}
-
-static void	zero_keep(char *keep, int n)
-{
-	int	i;
-
-	i = 0;
-	while (i < n)
-	{
-		keep[i] = 0;
-		++i;
-	}
 }
 
 static void	reconstruct_lis(int len, int *tidx, int *prev, char *keep)

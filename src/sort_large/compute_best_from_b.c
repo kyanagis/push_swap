@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 04:54:16 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 04:55:03 by kyanagis         ###   ########.fr       */
+/*   Created: 2025/08/10 05:24:24 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/08/10 05:24:29 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,50 @@
 void	consider_b_node(const t_ctx *ctx, int idx_b, int vb)
 {
 	int		pa;
-	int		ra_f;
-	int		ra_r;
-	int		rb_f;
-	int		rb_r;
 	t_cand	c;
 
 	pa = find_insert_idx_a(ctx->ac, vb);
-	ra_f = pa;
-	ra_r = pa - ctx->ac->sa;
-	rb_f = idx_b;
-	rb_r = idx_b - ctx->sb;
 	c.pos = idx_b;
 	c.val = vb;
-	c.ra = ra_f;
-	c.rb = rb_f;
+	c.ra = pa;
+	c.rb = idx_b;
 	upd_best(ctx->best, c);
-	c.ra = ra_r;
-	c.rb = rb_r;
+	c.ra = pa - ctx->ac->sa;
+	c.rb = idx_b - ctx->sb;
 	upd_best(ctx->best, c);
-	c.ra = ra_f;
-	c.rb = rb_r;
+	c.ra = pa;
+	c.rb = idx_b - ctx->sb;
 	upd_best(ctx->best, c);
-	c.ra = ra_r;
-	c.rb = rb_f;
+	c.ra = pa - ctx->ac->sa;
+	c.rb = idx_b;
 	upd_best(ctx->best, c);
+}
+
+static void	iterate_nodes(const t_ctx *ctx, t_node *b)
+{
+	int		i;
+	t_node	*p;
+
+	i = 0;
+	p = b;
+	while (i < ctx->sb && p)
+	{
+		consider_b_node(ctx, i, p->value);
+		p = p->next;
+		i++;
+	}
 }
 
 void	compute_best_move_from_b(t_node *a, t_node *b, t_move *best)
 {
-	t_ac	ac;
-	t_node	*p;
 	int		sb;
-	int		i;
+	t_ac	ac;
 	t_ctx	ctx;
 
-	fill_ac(a, &ac);
-	p = b;
 	sb = (int)list_size_fast(b);
+	fill_ac(a, &ac);
 	ctx.ac = &ac;
 	ctx.sb = sb;
 	ctx.best = best;
-	i = 0;
-	while (i < sb && p)
-	{
-		consider_b_node(&ctx, i, p->value);
-		p = p->next;
-		i++;
-	}
+	iterate_nodes(&ctx, b);
 }

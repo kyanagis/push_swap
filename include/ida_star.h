@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 05:36:54 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 18:52:42 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/10 05:56:44 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ typedef struct s_state
 	int	len_a;
 	int	len_b;
 }		t_state;
+
+typedef struct s_ctx
+{
+	int	bound;
+	int	*path;
+}		t_ctx;
 
 int		ida_star(const t_state *start, int *out);
 void	sort_five(t_node **a, t_node **b);

@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 05:01:32 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 05:01:38 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/10 05:11:34 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	fill_ac(t_node *a, t_ac *ac)
 
 int	find_insert_idx_a(const t_ac *ac, int v)
 {
-	int i;
-	int prev;
-	t_node *cur;
+	int		i;
+	int		prev;
+	t_node	*cur;
 
 	if (ac->sa <= 1)
 		return (0);

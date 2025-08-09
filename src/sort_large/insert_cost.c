@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   insert_cost.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/10 05:11:51 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/08/10 05:26:25 by kyanagis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap_large.h"
 
@@ -19,7 +29,12 @@ int	move_cost(int ra, int rb)
 	cn = abs_i(ra);
 	an = abs_i(rb);
 	if ((ra >= 0 && rb >= 0) || (ra < 0 && rb < 0))
-		return ((cn > an ? cn : an) + 1);
+	{
+		if (cn > an)
+			return (cn + 1);
+		else
+			return (an + 1);
+	}
 	return (cn + an + 1);
 }
 
@@ -30,14 +45,17 @@ int	move_max(int ra, int rb)
 
 	cn = abs_i(ra);
 	an = abs_i(rb);
-	return (cn > an ? cn : an);
+	if (cn > an)
+		return (cn);
+	else
+		return (an);
 }
 
 void	upd_best(t_move *b, t_cand c)
 {
-	int cost;
-	int diff;
-	int sumd;
+	int	cost;
+	int	diff;
+	int	sumd;
 
 	cost = move_cost(c.ra, c.rb);
 	if (cost < b->cost)

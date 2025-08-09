@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 02:11:10 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 02:39:01 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/10 05:55:51 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ static int	has_dup(t_node *head)
 	}
 	return (0);
 }
+
 void	parse_arguments(int ac, char **av, t_node **a)
 {
 	int		i;

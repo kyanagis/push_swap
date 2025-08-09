@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 05:47:27 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/08 23:29:01 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/10 05:44:31 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ static t_state	make_state(t_node *a)
 	return (s);
 }
 
-// 実行
 static void	apply_path(t_node **a, t_node **b, const int *path, int depth)
 {
 	while (depth--)
 		issue(*path++, a, b);
 }
+
 void	sort_five(t_node **a, t_node **b)
 {
 	int		path[12];
