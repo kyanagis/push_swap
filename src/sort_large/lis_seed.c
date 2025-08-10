@@ -6,11 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 04:05:16 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 04:53:22 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:30:33 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_large.h"
+#include "sort_large.h"
 
 void	build_arr_from_a(t_node *a, int *arr, int n)
 {
@@ -45,7 +45,7 @@ void	make_keep_by_value(const int *arr, const char *keep_idx, char *keep_val,
 	}
 }
 
-int	steps_to_next_nonlis_forward(t_node *a, const char *keep_val)
+static int	steps_to_next_nonlis_forward(t_node *a, const char *keep_val)
 {
 	int		steps;
 	t_node	*p;
@@ -60,7 +60,7 @@ int	steps_to_next_nonlis_forward(t_node *a, const char *keep_val)
 	return (steps);
 }
 
-int	last_nonlis_index(t_node *a, const char *keep_val)
+static int	last_nonlis_index(t_node *a, const char *keep_val)
 {
 	int		idx;
 	int		last;

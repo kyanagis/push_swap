@@ -6,12 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 04:51:30 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 05:15:59 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 05:33:52 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_large.h"
-#include <stdlib.h>
+#include "sort_large.h"
 
 static void	build_keep_mask(t_node *a, char **keep_val, int *lis_len)
 {

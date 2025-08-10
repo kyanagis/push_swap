@@ -6,11 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 07:03:43 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 05:44:19 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:24:01 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "sort_five.h"
 
 void	op_sa(t_state *s)
 {

@@ -6,11 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 05:18:40 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 05:18:51 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:21:53 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_large.h"
+#include "sort_large.h"
 
 void	rotate_a_by(t_node **a, int rot)
 {
@@ -78,33 +78,4 @@ void	rotate_min_to_top(t_node **a)
 		while (k-- > 0)
 			rra(a);
 	}
-}
-
-void	sort_three(t_node **a)
-{
-	int	x;
-	int	y;
-	int	z;
-
-	if (!*a || !(*a)->next || !(*a)->next->next)
-		return ;
-	x = (*a)->value;
-	y = (*a)->next->value;
-	z = (*a)->next->next->value;
-	if (x > y && y < z && x < z)
-		sa(a);
-	else if (x > y && y > z)
-	{
-		sa(a);
-		rra(a);
-	}
-	else if (x > y && y < z && x > z)
-		ra(a);
-	else if (x < y && y > z && x < z)
-	{
-		sa(a);
-		ra(a);
-	}
-	else if (x < y && y > z && x > z)
-		rra(a);
 }

@@ -6,11 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 05:11:51 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 05:26:25 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:21:38 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_large.h"
+#include "sort_large.h"
 
 static void	assign_best(t_move *b, t_cand c, int cost)
 {
@@ -21,7 +21,7 @@ static void	assign_best(t_move *b, t_cand c, int cost)
 	b->cost = cost;
 }
 
-int	move_cost(int ra, int rb)
+static int	move_cost(int ra, int rb)
 {
 	int	cn;
 	int	an;
@@ -38,7 +38,7 @@ int	move_cost(int ra, int rb)
 	return (cn + an + 1);
 }
 
-int	move_max(int ra, int rb)
+static int	move_max(int ra, int rb)
 {
 	int	cn;
 	int	an;

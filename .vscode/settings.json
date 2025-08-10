@@ -8,6 +8,10 @@
         "ps.h": "c",
         "stdio.h": "c",
         "limits.h": "c",
-        "stack.h": "c"
+        "stack.h": "c",
+        "cstdlib": "c",
+        "sort_large.h": "c",
+        "string": "cpp",
+        "list": "cpp"
     }
 }

@@ -6,12 +6,14 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:52:21 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/04 08:52:54 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:25:17 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PS_MSG_H
-# define PS_MSG_H
+#ifndef PS_H
+# define PS_H
+
+# include "stack.h"
 
 # define MSG_SA "sa"
 # define MSG_SB "sb"

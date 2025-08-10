@@ -6,7 +6,7 @@
 #    By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/04 08:55:09 by kyanagis          #+#    #+#              #
-#    Updated: 2025/08/10 05:13:19 by kyanagis         ###   ########.fr        #
+#    Updated: 2025/08/11 01:18:25 by kyanagis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,8 @@ src/sort_large/coord_compress.c \
 src/sort_large/insert_utils.c \
 src/sort_large/large_rotate.c \
 src/sort_large/push_nonlis.c \
+src/utils/zero_keep.c \
+src/sort_three/sort_three.c
 # src/sort_medium/sort_medium.c
 OBJS := $(SRCS:src/%.c=obj/%.o)
 

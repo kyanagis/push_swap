@@ -6,12 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 05:01:32 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 05:11:34 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 05:26:51 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_large.h"
-#include <limits.h>
+#include "sort_large.h"
 
 void	fill_ac(t_node *a, t_ac *ac)
 {
@@ -45,10 +44,10 @@ int	find_insert_idx_a(const t_ac *ac, int v)
 	int		prev;
 	t_node	*cur;
 
-	if (ac->sa <= 1)
-		return (0);
 	if (v < ac->minv || v > ac->maxv)
 		return (ac->posmin);
+	if (ac->sa <= 1)
+		return (0);
 	prev = last_node(ac->a)->value;
 	cur = ac->a;
 	i = 0;

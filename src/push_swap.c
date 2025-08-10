@@ -6,14 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 05:51:04 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 05:13:46 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:27:42 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 static int	is_sorted(const t_node *stack)
 {
@@ -26,35 +23,6 @@ static int	is_sorted(const t_node *stack)
 		cur = cur->next;
 	}
 	return (1);
-}
-
-static void	sort_three(t_node **a)
-{
-	int	f;
-	int	s;
-	int	t;
-
-	f = (*a)->value;
-	s = (*a)->next->value;
-	t = (*a)->next->next->value;
-	if (f < s && s < t)
-		return ;
-	if (f > s && s < t && f < t)
-		sa(a);
-	else if (f > s && s > t)
-	{
-		sa(a);
-		rra(a);
-	}
-	else if (f > s && s < t && f > t)
-		ra(a);
-	else if (f < s && s > t && f < t)
-	{
-		sa(a);
-		ra(a);
-	}
-	else
-		rra(a);
 }
 
 static void	sort_manager(t_node **stack_a, t_node **stack_b)
@@ -83,6 +51,6 @@ int	main(int argc, char **argv)
 		return (0);
 	parse_arguments(argc, argv, &stack_a);
 	sort_manager(&stack_a, &stack_b);
-	free_all(&stack_a, &stack_b);
+	stack_free_all(&stack_a, &stack_b);
 	return (EXIT_SUCCESS);
 }

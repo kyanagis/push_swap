@@ -6,11 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 05:47:27 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 05:44:31 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:24:23 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "sort_five.h"
 
 static void	issue(int op, t_node **a, t_node **b)
 {

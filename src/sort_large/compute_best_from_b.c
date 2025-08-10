@@ -6,13 +6,13 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 05:24:24 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 05:24:29 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:29:01 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_large.h"
+#include "sort_large.h"
 
-void	consider_b_node(const t_ctx *ctx, int idx_b, int vb)
+static void	consider_b_node(const t_ctx *ctx, int idx_b, int vb)
 {
 	int		pa;
 	t_cand	c;

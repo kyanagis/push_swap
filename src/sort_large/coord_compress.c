@@ -6,12 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 04:04:46 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/10 04:53:03 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:21:35 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_large.h"
-#include <stdlib.h>
+#include "sort_large.h"
 
 static void	swap_i(int *x, int *y)
 {

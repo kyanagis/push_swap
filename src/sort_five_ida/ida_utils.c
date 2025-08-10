@@ -6,11 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 06:08:24 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/08 23:28:18 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:24:16 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "sort_five.h"
 
 int	inv_heuristic(const t_state *s)
 {

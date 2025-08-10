@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 02:34:34 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/07/30 02:34:35 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 01:03:07 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	free_split(char **arr)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	if (!arr)
 		return ;
