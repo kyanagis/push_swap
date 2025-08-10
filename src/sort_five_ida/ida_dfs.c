@@ -6,11 +6,14 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 05:56:21 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/08/11 01:23:53 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/08/11 06:31:14 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort_five.h"
+
+static int			dfs(t_state *now, int g);
+static int			explore(t_state *now, int g, int op);
 
 static t_ida_ctx	*ida_ctx(void)
 {
@@ -18,9 +21,6 @@ static t_ida_ctx	*ida_ctx(void)
 
 	return (&s);
 }
-
-static int			dfs(t_state *now, int g);
-static int			explore(t_state *now, int g, int op);
 
 static int	explore(t_state *now, int g, int op)
 {

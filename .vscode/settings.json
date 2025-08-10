@@ -12,6 +12,7 @@
         "cstdlib": "c",
         "sort_large.h": "c",
         "string": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "sort_five.h": "c"
     }
 }
