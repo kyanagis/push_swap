@@ -1,74 +1,75 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/04 08:55:09 by kyanagis          #+#    #+#              #
-#    Updated: 2025/08/11 01:18:25 by kyanagis         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME := push_swap
 
+CC := cc
+CFLAGS := -Wall -Wextra -Werror -MMD -MP
+INCS := -Iinclude -Ilibft/include -Ilibft/ft_printf
 
-NAME    := push_swap
+LIBFT_DIR := libft
+LIBFT_A := $(LIBFT_DIR)/libft.a
 
-CC      := cc
-CFLAGS  := -Wall -Wextra -Werror -Iinclude -Ilibft/include
-LDFLAGS := -Llibft -lft        
+FT_PRINTF_DIR := $(LIBFT_DIR)/ft_printf
+FT_PRINTF_A := $(FT_PRINTF_DIR)/libftprintf.a
 
+VPATH := src:src/order:src/sort_three:src/sort_five_ida:src/sort_large:src/utils
 
 SRCS := \
-src/push_swap.c \
-src/parse.c \
-src/utils/ft_split_ws.c \
-src/utils/node_utils.c \
-src/utils/free_utils.c\
-src/order/swap.c \
-src/order/push.c \
-src/order/rotate.c \
-src/order/reverse_rotate.c \
-src/sort_five_ida/ida_dfs.c \
-src/sort_five_ida/ida_ops.c \
-src/sort_five_ida/ida_utils.c \
-src/sort_five_ida/ida_star.c \
-src/sort_five_ida/sort_five.c \
-src/LIS.c \
-src/sort_large/compute_best_from_b.c \
-src/sort_large/insert_cost.c \
-src/sort_large/large_core_utils.c \
-src/sort_large/lis_seed.c \
-src/sort_large/sort_large.c \
-src/sort_large/coord_compress.c \
-src/sort_large/insert_utils.c \
-src/sort_large/large_rotate.c \
-src/sort_large/push_nonlis.c \
-src/utils/zero_keep.c \
-src/sort_three/sort_three.c
-# src/sort_medium/sort_medium.c
-OBJS := $(SRCS:src/%.c=obj/%.o)
+push_swap.c \
+parse.c \
+LIS.c \
+push.c \
+swap.c \
+rotate.c \
+reverse_rotate.c \
+sort_three.c \
+ida_dfs.c \
+ida_ops.c \
+ida_star.c \
+ida_utils.c \
+sort_five.c \
+compute_best_from_b.c \
+coord_compress.c \
+insert_cost.c \
+insert_utils.c \
+large_core_utils.c \
+large_rotate.c \
+lis_seed.c \
+push_nonlis.c \
+sort_large.c \
+free_utils.c \
+ft_split_ws.c \
+node_utils.c \
+zero_keep.c
+
+OBJDIR := build
+OBJS := $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
+DEPS := $(OBJS:.o=.d)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) libft/libft.a
-	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $@
+$(NAME): $(LIBFT_A) $(FT_PRINTF_A) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT_A) $(FT_PRINTF_A) -o $@
 
-obj/%.o: src/%.c
+$(LIBFT_A):
+	$(MAKE) -C $(LIBFT_DIR)
+
+$(FT_PRINTF_A):
+	$(MAKE) -C $(FT_PRINTF_DIR)
+
+$(OBJDIR)/%.o: %.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-libft/libft.a:
-	$(MAKE) -C libft
-
+	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
 clean:
-	$(MAKE) -C libft clean
-	rm -rf obj
+	-$(MAKE) -C $(LIBFT_DIR) clean
+	-$(MAKE) -C $(FT_PRINTF_DIR) clean
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-	$(MAKE) -C libft fclean
-	rm -f $(NAME)
+	-$(MAKE) -C $(LIBFT_DIR) fclean
+	-$(MAKE) -C $(FT_PRINTF_DIR) fclean
+	@rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+-include $(DEPS)
